@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Produtos</title>
+</head>
+<body>
+    <h1>Cadastro de Livros</h1>
+    <form id="cadastroProdutos">
+
+        <label for="nome">Nome de produto:</label>
+        <input type="text" name="NomeProduto" id="NomeProduto" placeholder="NomeProduto"><br><br>
+
+        <label for="PreçoProduto">Preço do produto:</label>
+        <input type="number" name="PreçoProduto" id="PreçoProduto" placeholder="R$ Preço"><br><br>
+
+
+    <button type="button" onclick="addProduct()">Cadastrar Produto</button>
+
+    <h2>Produtos Cadastrados:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome do Produto</th>
+                <th>Preço do Produto</th>
+            </tr>
+        </thead>
+        <tbody id="productlist"></tbody>
+    </table>
+
+    <script>
+function addProduct() {
+
+    const NomeProduto = document.getElementById("NomeProduto").value;
+    const PreçoProduto = document.getElementById("PreçoProduto").value;
+
+    if (NomeProduto && PreçoProduto) {
+        const productlist = document.getElementById("productlist");
+        const newRow = productlist.insertRow();
+
+        const cell1 = newRow.insertCell(0);
+        cell1.innerHTML = NomeProduto;
+
+        const cell2 = newRow.insertCell(1);
+        cell2.innerHTML = `R$ ${parseFloat(PreçoProduto).toFixed(2)}`;
+
+        document.getElementById("NomeProduto").value;
+        document.getElementById("PreçoProduto").value;
+    }
+}
+    </script>
+
+</body>
+</html>

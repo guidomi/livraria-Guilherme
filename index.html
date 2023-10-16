@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="livraria.css">
+    <link rel="stylesheet" href="home.html">
 <head>
-    <link rel="stylesheet" href="style.css">
     <title>Livraria Online</title>
 </head>
-<body>
+<body id="Corpo">
+    <header>
+        <div class="caixa">
+        <h1> <img src="livro.png" alt="livro logo" class="logo"></h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="cadastro.html">Cadastro</a>
+    
+                </li>
+            </ul>
+        </nav>
+
+    </div> 
+    </header>
+
+
+    <center>
+
     <h1>Bem-vindo à Livraria Online</h1>
     <p>Insira o valor total da sua compra:</p>
     <input type="number" id="valorCompra" placeholder="Insira o valor em R$">
     <button onclick="calcularDesconto()">Calcular Desconto</button>
     <p>Desconto aplicado: <span id="desconto"></span></p>
+    
+    
+    <form>
+        Defina seu nivel de sasisfação:<br>
+        Pouco Satisfeito
+        <input type="range" name="satisfacao" min="0" max="10">
+        Muito Satisfeito
 
+    </form>
+    <img src="estante.jpeg" class="estante">
     <script>
         function calcularDesconto() {
             const valorCompra = parseFloat(document.getElementById('valorCompra').value);
 
- let desconto = 0;
+            let desconto = 0;
 
-if (valorCompra > 200) {
-    desconto = 0.2; // 20%
-}
-else if (valorCompra > 100) {
-    desconto = 0.1; // 10%
-}
-else if(valorCompra<=100){
-    desconto=0.05;
+            if (valorCompra > 200) {
+                desconto = 0.2; // 20%
+            } else if (valorCompra > 100) {
+                desconto = 0.1; // 10%
+            }
+            else if(valorCompra<=100){
+                desconto=0.05;
 
-}
+            }
 
-const valorDesconto = valorCompra * desconto;
- document.getElementById('desconto').textContent = `R$ ${valorDesconto.toFixed(2)}`;
-}
+            const valorDesconto = valorCompra * desconto;
+            document.getElementById('desconto').textContent = `R$ ${valorDesconto.toFixed(2)}`;
+        }
     </script>
 
-<main>
-    <ul class="produtos">
-    <li>
-<h2>Livros Digitais</h2>
-<img src="livrodig.jpg">
+</center>
 
-<p class="produto-descricao">Livros Físicos de capa normal ou dura</p>
-</li>
-<li>
-<h3>Livros Físicos</h3>
-<img src="livrofis.jpg">
 
-   <p class="produto-descricao">Livros Digitais para Kindle e outras plataformas</p>
-</li>
+
 </body>
 </html>

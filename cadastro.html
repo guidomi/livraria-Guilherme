@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuario</title>
+    
+</head>
+<body>
+    <form>
+        <p>Qual a sua Idade?</p>
+
+        <input type="radio" name="idade" value="0_18">Menor de 18 anos<br>
+        <input type="radio" name="idade" value="18_30">18 a 30 anos<br>
+        <input type="radio" name="idade" value="mais30">Acima de 30 anos<br>
+
+    </form>
+
+    <h1>Cadastro de Usuario</h1>
+    <form id="cadastroForm">
+
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" placeholder="Nome Completo"><br><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" placeholder="seuEmail@gmail.com"><br><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" placeholder="Sua senha"><br><br>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" name="endereco" id="endereco" placeholder="Seu endereço"><br><br>
+
+        <label for="telefone">Telefone:</label>
+        <input type="number" name="telefone" id="telefone" placeholder="(XX)XXXXX-XXXX"><br><br>
+
+        <button type="button" onclick="cadastrarUsuario()">Cadastrar</button>
+
+    </form>
+
+    <div id="mensagem"></div>
+
+    <script>
+        function cadastrarUsuario(){
+            // Obter os valores do formulário
+            var nome = document.getElementById("nome").value;
+            var email = document.getElementById("email").value;
+            var senha = document.getElementById("senha").value;
+
+            // Validar os campos (adicionar mais validações coforme o necessário)
+
+            if (nome === "" || email=== "" || senha === "") {
+                
+                document.getElementById("mensagem").innerHTML = "Por favor, preencha todos os campos.";
+                return;
+            }
+        
+
+        // Criar um objeto de usuario
+        var usuario = {
+            nome: nome,
+            email: email,
+            senha: senha,
+            endereco: endereco,
+            telefone: telefone
+        };
+
+        console.log("Usuário cadastrado", usuario);
+
+        document.getElementById("cadastroForm").reset();
+        document.getElementById("mensagem").innerHTML = "Cadastro realizado com sucesso!";
+    }
+
+    </script>
+
+
+
+
+</body>
+</html>

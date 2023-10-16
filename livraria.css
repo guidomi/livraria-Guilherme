@@ -1,0 +1,47 @@
+#Corpo{
+    background-color: #6b320de5;
+}
+#estante{
+    width: 10%;
+    left: 0%;
+    padding-bottom: 0%;
+    padding: 0 0 0 0;
+}
+h1{
+    font-size: 35px;
+    
+}
+nav{
+	position: absolute;
+	top: 110px;
+	right: 0;
+}
+
+nav li{
+	display: inline;
+	margin: 0 0 0 15px;
+}
+
+nav a{
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: bold;
+	font-size: 20px;
+	text-decoration: none;
+}
+nav a:hover{
+	color: #19c745;
+	text-decoration: underline;
+}
+.caixa{
+	position: relative;
+	width: 940px;
+	margin: 0 auto;
+}
+.logo{
+    width: 25%;
+}
+header{
+	background: rgb(19,19,19);
+    background: linear-gradient(90deg, rgba(19,19,19,1) 0%, rgba(212,212,212,1) 45%, rgba(19,19,19,1) 100%);
+}
